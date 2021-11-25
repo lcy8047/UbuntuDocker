@@ -15,7 +15,7 @@ RUN apt-get -y update
 
 # vim & vimrc
 RUN apt-get -y install vim gcc
-ADD ./home/.vimrc /root/
+ADD ./files/home/.vimrc /root/
 
 # 기타 툴
 RUN apt-get -y install wget net-tools netcat zip curl nasm qemu
@@ -27,7 +27,7 @@ RUN apt-get -y install flex bison
 RUN apt-get -y install libc6:i386 libncurses5:i386 libstdc++6:i386
 
 # bashrc
-ADD ./home/.bashrc /root/
+ADD ./files/home/.bashrc /root/
 
 # libraries
 RUN apt-get -y install  build-essential \
@@ -64,8 +64,8 @@ RUN python3 -m pip install --upgrade pwntools
 RUN apt-get -y install gdb
 RUN git clone https://github.com/longld/peda.git ~/peda
 RUN git clone https://github.com/scwuaptx/Pwngdb.git ~/Pwngdb
-ADD ./bin/gdb-peda /bin/
-ADD ./home/.gdbinit /root/
+ADD ./files/bin/gdb-peda /bin/
+ADD ./files/home/.gdbinit /root/
 
 # 32bit 바이너리 heapinfo를 위해
 RUN apt-get -y install libc6-dbg libc6-dbg:i386
