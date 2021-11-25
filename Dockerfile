@@ -18,7 +18,7 @@ RUN apt-get -y install vim gcc
 ADD ./home/.vimrc /root/
 
 # 기타 툴
-RUN apt-get -y install wget net-tools netcat zip curl
+RUN apt-get -y install wget net-tools netcat zip curl nasm qemu
 
 # flex & bison
 RUN apt-get -y install flex bison
